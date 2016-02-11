@@ -1,3 +1,6 @@
+# We probably don't want to run this on every chef run, but lets do that for now
+execute "apt-get update"
+
 geonode_pkgs = %w{libxml2-dev libxslt-dev libjpeg-dev zlib1g-dev libpng12-dev python-dev imagemagick}
 
 package "maven" if node['rogue']['geoserver']['build_from_source']
