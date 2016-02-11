@@ -5,6 +5,7 @@ default['create_self_signed_cert'] = false
 default['scheme'] = node['ssl'] ? 'https://' : 'http://'
 
 node.set['build-essential']['compile_time'] = true
+default['apt']['compile_time_update'] = true
 default['java']['keystore'] = '/usr/lib/jvm/default-java/jre/lib/security/cacerts'
 default['java']['keystore_password'] = 'changeit'
 
