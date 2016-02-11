@@ -148,6 +148,7 @@ action :install do
       branch = 'master'
     end
 
+    branch = node['rogue']['rogue_geonode']['revision'] if node['rogue']['rogue_geonode']['revision']
     git new_resource.rogue_geonode_location do
       repository node['rogue']['rogue_geonode']['url']
       revision branch

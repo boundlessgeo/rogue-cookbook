@@ -99,6 +99,7 @@ default['rogue']['django_maploom']['url'] = "git+https://github.com/ROGUE-JCTD/d
 default['rogue']['rogue_geonode']['python_packages'] = ["uwsgi", "psycopg2"]
 default['rogue']['rogue_geonode']['location'] = "#{node['rogue']['geonode']['location']}/rogue_geonode"
 default['rogue']['rogue_geonode']['url'] = 'https://github.com/boundlessgeo/rogue_geonode.git'
+default['rogue']['rogue_geonode']['revision'] = nil
 default['rogue']['rogue_geonode']['fixtures'] = ['sample_admin.json',]
 default['rogue']['rogue_geonode']['settings']['ALLOWED_HOSTS'] = [node['rogue']['networking']['application']['address'], 'localhost', node['rogue']['networking']['application']['fqdn']]
 default['rogue']['rogue_geonode']['settings']['PROXY_ALLOWED_HOSTS'] = ['*', node['rogue']['networking']['application']['address'], '.lmnsolutions.com', '.openstreetmap.org']
