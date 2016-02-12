@@ -6,9 +6,9 @@ default.postgresql.pg_hba = [
   {:type => 'host', :db => 'all', :user => 'all', :addr => '::1/128', :method => 'md5'}
 ]
 
-default['postgis']['version'] = '2.1'
-default['postgis']['template_name'] = 'template_postgis'
-default['postgis']['locale'] = 'en_US.utf8'
+default.postgis.version = '2.1'
+default.postgis.template_name = 'template_postgis'
+default.postgis.locale = 'en_US.utf8'
 
 node.normal.postgresql.enable_pgdg_apt = true
 node.normal.postgresql.version = "9.4"
@@ -19,3 +19,6 @@ node.normal.postgresql.contrib.packages = ["postgresql-contrib-#{node.postgresql
 # Chef still fails on the first run because these still use the version of postgres declared in the cookbook
 node.normal.postgresql.dir = "/etc/postgresql/#{node.postgresql.version}/main"
 node.normal.postgresql.config.data_directory = "/var/lib/postgresql/#{node.postgresql.version}/main"
+node.normal.postgresql.config.hba_file = "/etc/postgresql/#{node.postgresql.version}/main/pg_hba.conf"
+node.normal.postgresql.config.ident_file = "/etc/postgresql/#{node.postgresql.version}/main/pg_ident.conf"
+node.normal.postgresql.config.external_pid_file = "/var/run/postgresql/#{node.postgresql.version}-main.pid"
